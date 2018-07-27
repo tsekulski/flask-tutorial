@@ -29,4 +29,8 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
+    # import and call init_app function to register db functions with the app instance
+    from . import db
+    db.init_app(app)
+
     return app
